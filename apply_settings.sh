@@ -29,8 +29,8 @@ cat w | sed -e "s/<version>5.1.45<\/version>/<version>8.0.16<\/version>/g" \
 mv ./pom.xml $appName/
 rm ./w
 
-mysql -h localhost -u root $appName < init_db.sql
-mysql -h localhost -u root $appName < drs.sql
+mysql -h localhost -uroot < init_db.sql
+mysql -h localhost -uroot $appName < drs.sql
 
 cd $appName
 mvn tomcat7:run-war
